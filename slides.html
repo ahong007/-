@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>轮播图</title>
+        <style>
+            .slide {
+                position: relative;
+                width: 450px;
+                height: 300px;
+            }
+            .slide-image {
+                position: absolute;
+                top: 0;
+                left: 0;
+                opacity: 0;
+                height: 300px;
+                width: 450px;
+                transition: opacity 1s;
+            }
+            .slide-image-active {
+                opacity: 1;
+            }
+            .slide-button {
+                right: 0;
+                width: 30px;
+                height: 50px;
+                border: none;
+                color: #fff;
+                background: #000;
+                opacity: 0.4;
+                outline: 0;
+                cursor: pointer;
+            }
+            .slide-button-left {
+                left: 0;
+            }
+            .slide-button-right {
+                right: 0;
+            }
+            .vertical-center {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .slide-dots {
+                position: absolute;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .slide-dot {
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background: red;
+            }
+            .dot-active {
+                background: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="slide" data-imgs="4" data-active="0">
+            <div class="slide-images">
+                <img id="id-image-0" class="slide-image slide-image-active" src="slideimages/1.jpg" alt="towers">
+                <img id="id-image-1" class="slide-image" src="slideimages/2.jpg" alt="stables">
+                <img id="id-image-2" class="slide-image" src="slideimages/3.jpg" alt="Shrines">
+                <img id="id-image-3" class="slide-image" src="slideimages/4.jpg" alt="Villages">
+            </div>
+            <div class="slide-buttons">
+                <button class="slide-button slide-button-left vertical-center" data-offset="-1">
+                    &lt;
+                </button>
+                <button class="slide-button slide-button-right vertical-center" data-offset="1">
+                    &gt;
+                </button>
+            </div>
+            <div class="slide-dots">
+                <div id="id-dot-0" class="slide-dot dot-active" data-index="0"></div>
+                <div id="id-dot-1" class="slide-dot" data-index="1"></div>
+                <div id="id-dot-2" class="slide-dot" data-index="2"></div>
+                <div id="id-dot-3" class="slide-dot" data-index="3"></div>
+            </div>
+        </div>
+        <script src="slides.js"></script>
+        <script src="slides_1.js"></script>
+    </body>
+</html>
